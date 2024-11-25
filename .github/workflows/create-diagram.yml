@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate Visualization
-        uses: githubocto/repo-visualizer@v1
+        uses: githubocto/repo-visualizer@v0.9.1
 
       - name: Commit and Push Diagram
         run: |
