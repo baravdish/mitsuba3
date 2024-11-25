@@ -1,0 +1,24 @@
+name: Generate Repo Diagram
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-diagram:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Generate Visualization
+        uses: githubocto/repo-visualizer@v1
+
+      - name: Commit and Push Diagram
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add diagram.svg
+          git commit -m "Add visualization diagram"
+          git push
