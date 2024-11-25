@@ -3,7 +3,7 @@ name: Generate Repo Diagram
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   generate-diagram:
